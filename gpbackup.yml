@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: gpadmin
+  tasks:
+    - name: Check the date on the server
+      command: date
+    - name: Check tht ip on the server
+      command: ip add
+    - name: Do backup
+      command: PAHT="/usr/local/greenplum/greenplum-db-6.16.0/bin:/usr/local/greenplum/greenplum-db-6.16.0/ext/python/bin:/usr/local/greenplum/greenplum-db-6.16.0/bin:/usr/local/greenplum/greenplum-db-6.16.0/ext/python/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/gpadmin/.local/bin:/home/gpadmin/bin";source /etc/profile;gpbackup --dbname gpdb --include-table public.nation
